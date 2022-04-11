@@ -1,0 +1,91 @@
+body {
+    max-width: 1096px;
+    margin: 0 auto;
+}
+
+p {
+    margin: 0;
+}
+
+.content {
+    margin-top: 30%;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    border: 1px solid white
+}
+
+.gameBoard {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 300px;
+}
+
+.topChar {
+    display: flex;
+    margin-left: 25px;
+}
+
+.topChar p {
+    width: 25px;
+    height: 25px;
+}
+
+.abc {
+    display: flex;
+    margin: 0 auto;
+}
+
+.line {
+    height: 25px;
+}
+
+.submarine {
+    margin-top: 25px;
+    width: 25px;
+    display: flex;
+    flex-direction: column;
+    background: none;
+}
+
+.ships {
+    display: flex;
+    justify-content: space-between;
+}
+
+.submarine button {
+    width: 25px;
+    height: 25px;
+    background: red;
+    border: 1px solid black;
+}
+
+.ship {
+    background-color: red;
+}
+
+.leftChar {
+    display: flex;
+    flex-direction: column;
+}
+
+.leftChar p {
+    height: 25px;
+    width: 25px;
+    text-align: center;
+}
+
+.playerBoard {
+    width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.field {
+    width: 25px;
+    height: 25px;
+    margin: 0;
+    background: none;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 0;
+}

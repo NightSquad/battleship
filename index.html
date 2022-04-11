@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="modal"></div>
+    <div class="content">
+        <div class="gameBoard">
+            <div class="topChar">
+                <p>А</p>
+                <p>Б</p>
+                <p>В</p>
+                <p>Г</p>
+                <p>Д</p>
+                <p>Е</p>
+                <p>Ж</p>
+                <p>З</p>
+                <p>И</p>
+                <p>К</p>
+            </div>
+            <div class="abc">
+                <div class="leftChar">
+                    <p>0</p>
+                    <p>1</p>
+                    <p>2</p>
+                    <p>3</p>
+                    <p>4</p>
+                    <p>5</p>
+                    <p>6</p>
+                    <p>7</p>
+                    <p>8</p>
+                    <p>9</p>
+                </div>
+                <div class="playerBoard" ondrop="drop_handler(event)" ondragover="dragover_handler(event)" ondragleave="dragleave_handler(event)"></div>
+         
+            </div>
+            <div class="ships">
+                                   <div class="submarine" draggable="true">
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                </div>
+                <div class="submarine" draggable="true">
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                </div>
+                <div class="submarine" draggable="true">
+                    <button></button>
+                    <button></button>
+                </div>
+                <div class="submarine" draggable="true" style='height: 25px;'>
+                    <button></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="./notify/notify.js"></script>
+<script src="script.js"></script>
+</html>
