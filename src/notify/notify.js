@@ -1,5 +1,5 @@
 class notify{
-    success() {
+    success(text) {
         let modal = document.getElementsByClassName('modal')[0];
         let notify = document.createElement('div');
         notify.addEventListener('animationiteration', (e) => {
@@ -12,11 +12,11 @@ class notify{
         notify.classList.add('notify');
         notify.style.backgroundColor = 'green'
         let msg = document.createElement('p')
-        msg.textContent = 'Success'
+        msg.textContent = text
         notify.append(msg);
         modal.prepend(notify)
     }
-    fail() {
+    fail(text) {
         let modal = document.getElementsByClassName('modal')[0];
         let notify = document.createElement('div');
         notify.addEventListener('animationiteration', (e) => {
@@ -29,10 +29,10 @@ class notify{
         notify.classList.add('notify');
         notify.style.backgroundColor = 'brown'
         let msg = document.createElement('p')
-        msg.textContent = 'Fail'
+        msg.textContent = text
         notify.append(msg);
         modal.prepend(notify)
     }
 };
 
-export default notify
+export {notify}
