@@ -11,18 +11,24 @@ p {
     margin-top: 30%;
     background-color: antiquewhite;
     border-radius: 5px;
-    border: 1px solid white
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
 }
 
 .gameBoard {
     margin: 0 auto;
     text-align: center;
     max-width: 300px;
+    display: flex;
+    flex-direction: column;
 }
 
 .topChar {
     display: flex;
     margin-left: 25px;
+    height: 25px;
 }
 
 .topChar p {
@@ -128,6 +134,28 @@ p {
     flex-direction: row;
     width: auto;
     height: 25px;
+}
+
+.choosePrepare {
+    margin-top: 30px;
+    margin-left: 25px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+}
+
+.chooseButton {
+    height: 25px;
+    width: 100px;
+    background: none;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.chooseButton:hover {
+    transition: 0.1s ease all;
+    background: white;
 }
 
 .success {
