@@ -1,4 +1,4 @@
-import { players, currentPlayer } from "./startGame";
+import { players, enemyPlayer} from "./startGame";
 
 class Ship {
     constructor() {
@@ -15,7 +15,7 @@ class Ship {
         } else {
             num = e[0];
             char = e[1];
-            this.Board = players[currentPlayer].gameBoard.board;
+            this.Board = players[enemyPlayer].gameBoard.board;
         }
 
         if (this.Board.childNodes[num-1]) {

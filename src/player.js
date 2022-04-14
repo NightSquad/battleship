@@ -3,6 +3,7 @@ class Player {
         this.name = name;
         this._ships = []
         this._gameBoard = null;
+        this.sunks = [];
     }
     get ships() {
         return this._ships

@@ -58,10 +58,8 @@ function renderBoard(table) {
 
 
 function renderAllShips(player, playerBoard) {
-    console.log(player)
     for (let i=0; i<player.ships.length; i++) {
         let thisShipCoord = player.ships[i].coord;
-        // console.log(player)
         for (let j=0; j<thisShipCoord.length; j++) {
             playerBoard.childNodes[thisShipCoord[j][0]].childNodes[thisShipCoord[j][1]].style.backgroundColor = 'blue'
         }
@@ -73,7 +71,6 @@ function random(max) {
 }
 
 function autoPrepare(player) {
-    console.log('autoPrepareTest1')
     function addRandomShip(size){
         let type = random(2);
         if(type == 0) {
@@ -82,11 +79,9 @@ function autoPrepare(player) {
 
         let x = random(10);
         let y = random(10)
-        // console.log(type, x, y)
         return type([x, y], size)
     }
-    console.log('autoPrepareTest2')
-    for (let i=0; i<=rules.length; i++) { // Вид корабля
+    for (let i=rules.length-1; i>=0; i--) { // Вид корабля
         for (let j=0; j<rules[i]; j++) { // Количество кораблей
             let test = 0;
             while(true) {
@@ -100,7 +95,6 @@ function autoPrepare(player) {
             }    
         }
     }
-    console.log(ships)
     player.ships = ships;
     ships = [];
 }
@@ -113,7 +107,10 @@ function generatePrepare() {
             ships.append(createShip(i+1))
         }
     }
-    gameTable.append(ships)
+    let hint = document.createElement('p');
+    hint.textContent = 'Чтобы развернуть корабль - кликните по нему дважды. Корабль ставится относительно левой/верхней координаты'
+    hint.id = 'hint'
+    gameTable.append(hint, ships)
 }
 
 function addShipHorizontal(e, size) {
@@ -226,9 +223,12 @@ function drop_handler(ev) {
     if (dragged.classList[1] == 'horizontal') {
         if (addShipHorizontal(ev, dragged.getElementsByTagName('button').length)) {
             dragged.remove();
-            dragged = null;  
+            dragged = null;
+            renderLastShip()
             if (ships.length == 10) {
                 player.ships = ships;
+                hint.remove()
+                ships = [];
                 startGame()
             }
             return
@@ -239,8 +239,11 @@ function drop_handler(ev) {
     if (addShipVertical(ev, dragged.getElementsByTagName('button').length)) {
         dragged.remove();
         dragged = null;  
+        renderLastShip()
         if (ships.length == 10) {
+            hint.remove()
             player.ships = ships;
+            ships = [];
             startGame()
         }
         return
@@ -254,24 +257,18 @@ playerBoard.addEventListener('dragover', dragover_handler)
 playerBoard.addEventListener('drop', drop_handler)
 
 auto.addEventListener('click', () => {
-    console.log('test0')
     autoPrepare(player);
-    console.log('test1')
     renderAllShips(player, playerBoard);
-    console.log('test2')
     let choise = document.getElementsByClassName('choosePrepare')[0];
-    console.log('test3')
-    choise.remove()
-    console.log('test4')
+    choise.style.display = 'none'
     startGame()
-    console.log('test5')
-    console.log(player.ships.length)
+
 })
 
 manual.addEventListener('click', () => {
     generatePrepare();
     let choise = document.getElementsByClassName('choosePrepare')[0];
-    choise.remove()
+    choise.style.display = 'none'
 })
 
 export {generatePrepare, ships, renderBoard, autoPrepare, renderAllShips, player, random}

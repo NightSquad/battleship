@@ -8,7 +8,7 @@ p {
 }
 
 .content {
-    margin-top: 30%;
+    margin-top: 20%;
     background-color: antiquewhite;
     border-radius: 5px;
     border: 1px solid white;
@@ -61,7 +61,7 @@ p {
 .submarine button {
     width: 25px;
     height: 25px;
-    background: red;
+    background: blue;
     border: 1px solid black;
 }
 
@@ -164,4 +164,34 @@ p {
 .fail {
     margin-left: 20px;
     background-color: brown;
+}
+
+.win {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.699);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.winnerBox {
+    width: 50%;
+    height: 20%;
+    background-color: aliceblue;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.winner {
+    font-size: 25px;
 }
